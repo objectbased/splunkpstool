@@ -8,6 +8,7 @@ Run the script from powershell directly or from a CMD prompt
 
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -?
+[[-agent_version] <string>] [[-platform] <string>] [[-arch] <string>] [[-binary] <string>] [[-ds] <string>] [[-install_dir] <string>] [-download] [-install]
 ```
 
 **Option 1** - Download
