@@ -34,3 +34,7 @@ powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download -agent_versi
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download -install -agent_version 7.3.3 -platform windows -arch x86_64 
 ```
+**Option 4** - Install from local binary
+```
+powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -install -binary "C:\Downloads\splunkforwarder-8.0.0-1357bef0a7f6-x64-release.msi" -ds "https://splunk.com:8089"
+```
