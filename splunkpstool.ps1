@@ -119,13 +119,14 @@ if ($download -and -not ($install)) {
 
 if ($install -and ($binary -ne "na")) {
     Install-Splunk-Agent $ds $install_dir $binary
+    Write-Host "Agent successfully installed"
     Write-Host "Log output written to $env:TEMP\splunk-agent.log"
 }
 
 if ($download -and $install) {
     Write-Host "Downloading and Installing"
     $binary, $location = Download-Splunk-Agent $agent_version $platform $arch
-    Write-Host "Attemping to install agent"
+    Write-Host "Attempting to install agent"
     Install-Splunk-Agent $ds $install_dir $location
     Write-Host "Agent successfully installed"
     Write-Host "Log output written to $env:TEMP\splunk-agent.log"
