@@ -26,11 +26,11 @@ Run the script from powershell directly or from a CMD prompt
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download
 ```
-**Option 2** - Download with paramters
+**Option 2** - Download with parameters
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download -agent_version 7.3.3 -platform windows -arch x86_64
 ```
-**Option 3** - Download with paramters and install
+**Option 3** - Download with parameters and install
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download -install -agent_version 7.3.3 -platform windows -arch x86_64 
 ```
