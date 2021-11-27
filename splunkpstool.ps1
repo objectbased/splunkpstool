@@ -31,7 +31,7 @@ function Download-Splunk-Agent {
     $direct_download_url = $false
     $old_url = 'https://www.splunk.com/en_us/download/previous-releases/universalforwarder.html'
     $new_url = 'https://www.splunk.com/en_us/download/universal-forwarder.html'
-
+    $ProgressPreference = 'SilentlyContinue'
     $request = ((Invoke-WebRequest -Uri $old_url -UseBasicParsing).Links | Where-Object {$_.'data-filename' -like “*splunkforwarder-*”})
 
     if ($agent_version -eq "na") {
@@ -105,7 +105,6 @@ function Download-Splunk-Agent {
 
 function Install-Splunk-Agent {
     param ($ds, $install_dir, $binary)
-    $ds = "https://server.domain.com:8089"
     $install_dir = "C:\Program Files\SplunkUniversalForwarder"
     $log = "$env:TEMP\splunk-agent.log"
     Start-Process -Wait -Verb RunAs -FilePath "msiexec.exe" -ArgumentList "/L $log /i $binary DEPLOYMENT_SERVER=$ds AGREETOLICENSE=Yes GENRANDOMPASSWORD=1 /quiet"
@@ -118,7 +117,7 @@ if ($download -and -not ($install)) {
     Download-Splunk-Agent $agent_version $platform $arch  
 }
 
-if ($install -and $binary) {
+if ($install -and ($binary -ne "na")) {
     Install-Splunk-Agent $ds $install_dir $binary
     Write-Host "Log output written to $env:TEMP\splunk-agent.log"
 }
@@ -128,4 +127,6 @@ if ($download -and $install) {
     $binary, $location = Download-Splunk-Agent $agent_version $platform $arch
     Write-Host "Attemping to install agent"
     Install-Splunk-Agent $ds $install_dir $location
+    Write-Host "Agent successfully installed"
+    Write-Host "Log output written to $env:TEMP\splunk-agent.log"
 }
