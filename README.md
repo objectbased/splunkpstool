@@ -4,6 +4,12 @@ Powershell script that provides the ability to download various Splunk Universal
 ## How it Works
 Run the script from powershell directly or from a CMD prompt
 
+## Help
+
+```
+powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -?
+```
+
 **Option 1** - Download
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -download
