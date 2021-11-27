@@ -1,15 +1,14 @@
 # splunkpstool
 Powershell script that provides the ability to download various Splunk Universal Forwarder packages along with the ability to install with an assortment of paramters on a local machine.
 
-## How it Works
-Run the script from powershell directly or from a CMD prompt
-
-## Help
-
+## Switches
 ```
 powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -?
 [[-agent_version] <string>] [[-platform] <string>] [[-arch] <string>] [[-binary] <string>] [[-ds] <string>] [[-install_dir] <string>] [-download] [-install]
 ```
+
+## How it Works
+Run the script from powershell directly or from a CMD prompt
 
 **Option 1** - Download
 ```
