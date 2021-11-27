@@ -17,7 +17,7 @@ powershell -ExecutionPolicy Bypass -File splunkpstool.ps1 -?
 | -ds | Provide the name of a deployment server to configure when installing the agent. | -ds "https://splunk.com:8089"
 | -install_dir | Set the install directory to a custom location. If not set the default path will be used C:\Program Files\SplunkUniversalForwarder. | -install_dir "G:\SplunkForwarder"
 | -download | Switch is required when downloading a package locally and can be used with -install for installation. This switch is a boolean. | -download
-| -install | Switch is required when installing a pack locally on the machine. This switch is a boolean | -install
+| -install | Switch is required when installing a pack locally on the machine. This switch is a boolean. | -install
 
 ## How it Works
 Run the script from powershell directly or from a CMD prompt
